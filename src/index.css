@@ -1,0 +1,138 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Base overrides ──────────────────────────────────────────────────────── */
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background-color: #FAFAF9;
+    color: #4A4744;
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, h4 {
+    color: #1C1B1A;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+  }
+
+  ::selection {
+    background: #EEF1FE;
+    color: #4F6AF5;
+  }
+}
+
+/* ── Custom component classes (plain CSS — no @apply with custom tokens) ─── */
+
+/* Card */
+.lx-card {
+  background: #ffffff;
+  border: 1px solid #E8E6E3;
+  border-radius: 14px;
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,0.06);
+  transition: box-shadow 0.2s ease;
+}
+.lx-card:hover {
+  box-shadow: 0 4px 16px 0 rgba(0,0,0,0.10);
+}
+
+/* Section label */
+.lx-label {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #4F6AF5;
+  margin-bottom: 0.75rem;
+}
+
+/* Section heading */
+.lx-heading {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #1C1B1A;
+  margin-bottom: 1rem;
+}
+@media (min-width: 768px) {
+  .lx-heading { font-size: 2rem; }
+}
+
+/* Buttons */
+.lx-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.625rem 1.25rem;
+  border-radius: 8px;
+  background: #4F6AF5;
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.15s;
+}
+.lx-btn-primary:hover { background: #3B52D6; }
+
+.lx-btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.625rem 1.25rem;
+  border-radius: 8px;
+  background: #fff;
+  color: #4A4744;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border: 1px solid #E8E6E3;
+  cursor: pointer;
+  text-decoration: none;
+  transition: border-color 0.15s, color 0.15s;
+}
+.lx-btn-outline:hover { border-color: #4F6AF5; color: #4F6AF5; }
+
+/* Nav link */
+.lx-nav-link {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #4A4744;
+  text-decoration: none;
+  transition: color 0.15s;
+}
+.lx-nav-link:hover { color: #1C1B1A; }
+
+/* Progress bar */
+.lx-progress-track {
+  height: 6px;
+  background: #F5F4F2;
+  border-radius: 999px;
+  overflow: hidden;
+}
+.lx-progress-fill {
+  height: 100%;
+  background: #4F6AF5;
+  border-radius: 999px;
+  transition: width 0.6s ease;
+}
+
+/* Workflow step connector */
+.lx-step-line {
+  width: 1px;
+  height: 32px;
+  background: #E8E6E3;
+  margin: 4px auto;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #F5F4F2; }
+::-webkit-scrollbar-thumb { background: #D5D3D0; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #B8B6B3; }
